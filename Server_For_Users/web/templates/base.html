@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+
+<head>
+  <!-- Meta tags for responsiveness and character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <!-- Dynamic page title block -->
+  <title> {% block title %} {% endblock %} </title>
+
+  <!-- Link to external stylesheets -->
+  <link rel="stylesheet" href="css/nicepage.css" media="screen">
+  <link rel="stylesheet" href="css/base.css" media="screen">
+
+  <!-- External scripts for functionality -->
+  <script class="u-script" type="text/javascript" src="js/jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
+
+  <!-- Generated meta tag by Nicepage for versioning -->
+  <meta name="generator" content="Nicepage 5.7.9, nicepage.com">
+
+  <!-- Google Fonts for typography -->
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+  <!-- Bootstrap CSS and JavaScript for responsive design and UI components -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="bootstrap/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="bootstrap/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript files for contract details and blockchain interaction -->
+  <script src="js/contractsDetails.js"></script>
+  <script src="js/web3.min.js"></script>
+
+  <!-- Structured data for SEO (describes the organization) -->
+  <script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Land Registry"
+  }</script>
+
+  <!-- Theme color and Open Graph metadata for social sharing -->
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="dashboard">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="en">
+  <!-- Page Header -->
+  <header>
+    <div>
+      <h1> Welcome To Land Registry Portal</h1>
+    </div>
+  </header>
+
+  <!-- Navigation Section -->
+  <section>
+    <div id="navBar">
+      <div>
+        <!-- Conditional block for adding property -->
+        {% if add_property %}
+        <button class="dashboardLinks" id="addPropertyButtonDiv" onclick="toggleAddProperty()">
+          Add Property
+        </button>
+        {% else %}
+        <!-- Dashboard navigation -->
+        <a class="dashboardLinks" href="/dashboard">
+          Dashboard
+        </a>
+        {% endif %}
+
+        <!-- Navigation links for different functionalities -->
+        <a class="dashboardLinks" href="/MySales">Listed Properties</a>
+        <a class="dashboardLinks" href="/myRequestedSales">My Offers</a>
+        <a class="dashboardLinks" href="/availableToBuy">Available Listings</a>
+
+        <!-- Logout link with an associated function -->
+        <a class="dashboardLinks" href="/logout" onclick="logout()">Logout</a>
+
+        <!-- Placeholder for displaying the user's name -->
+        <button id="nameOfUser"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content block (dynamic content rendered here) -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Loading spinner, initially hidden -->
+  <div id="loadingDiv" style="display: none;">
+    <span> Loading .. </span>
+    <div id="loading" class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+</body>
+
+</html>

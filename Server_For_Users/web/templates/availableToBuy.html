@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+<!-- Specify the title of the page -->
+{% block title %}
+    Available Listings
+{% endblock %}
+
+{% block content %}
+
+<!-- Link to the external stylesheet for the "Available To Buy" page -->
+<link rel="stylesheet" href="css/availableToBuy.css">
+
+<!-- Link to the external JavaScript file containing the logic for this page -->
+<script src="js/availableToBuy.js"></script>
+
+<!-- Immediately check the connection status when the page loads -->
+<script type="text/javascript">
+    checkConnection()
+</script>
+
+<!-- Main container to ensure the content fills at least 78% of the viewport height -->
+<div style="min-height: 78vh;">
+
+    <!-- Alert box to display notifications or messages to the user -->
+    <div class="alert " role="alert" id="notifyUser">
+    </div>
+
+    <!-- Form to allow users to input a location ID and search for properties available to buy -->
+    <div id="formForTakingLocationId">
+        <form id="inputLocationIdForm" method="post" onsubmit="fetchPropertiesAvailabletoBuy(event)">
+            <!-- Input field for location ID -->
+            <input type="text" id="inputLocationId" placeholder="Enter Location" required>
+            <!-- Submit button to trigger the property search -->
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <!-- Table to display the properties available for purchase, initially hidden -->
+    <div id="salesTable" style="display:none;">
+        <table>
+            <!-- Table caption showing the location ID for which properties are displayed -->
+            <caption>Properties Available To Buy On Location: <span id="locationId"></span></caption>
+            <thead>
+                <th> S.No </th> <!-- Serial Number of the property -->
+                <th> Sale Id </th> <!-- Unique identifier for the sale -->
+                <th> Owner </th> <!-- Owner of the property -->
+                <th> Property Id </th> <!-- Unique property identifier -->
+                <th> Price [in Ether] </th> <!-- Price of the property in Ether -->
+                <th> Options </th> <!-- Action buttons/options for the user -->
+            </thead>
+            <!-- Table body where the property data will be dynamically inserted -->
+            <tbody id="salesTableBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Modal-like prompt for entering the price when making an offer -->
+    <div id="prompt-container-backcover">
+        <div id="prompt-container">
+            <!-- Label and input field for entering the price in Ether -->
+            <label for="prompt-input">Enter Price [in Ether]:</label>
+            <input type="number" id="prompt-input">
+            <br><br>
+            <!-- Buttons for confirming or canceling the action -->
+            <button id="prompt-ok">OK</button>
+            <button id="prompt-cancel">Cancel</button>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
