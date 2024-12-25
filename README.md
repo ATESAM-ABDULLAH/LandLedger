@@ -3,16 +3,15 @@
 
 ## Table of Contents
 
-- [About](#About)
-   - [Drawbacks of traditional system](#how-it-works)
-   - [How it works](#drawbacks-of-the-traditional-system)
-- [Tech Stack & Tools](#tech-stack--tools)
-- [Key Features](#key-features)
-- [Installation](#installation)
-- [Usage](#usage)
+- [About](##About)
+   - [How it works](###how-it-works)
+- [Tech Stack & Tools](##tech-stack--tools)
+- [Key Features](##key-features)
+- [Setup](##Setup)
+- [Running the Code](#usage)
 
 
-# About
+## About
 
 The Land Registration System Using Blockchain is a decentralized application (DApp) built on the Ethereum blockchain. 
 It aims to revolutionize the traditional land registration process by leveraging blockchain technology. 
