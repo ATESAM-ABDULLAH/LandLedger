@@ -434,7 +434,7 @@ contract TransferOwnerShip{
         sale.paymentDone = false;
 
         // change state of property again back to verified
-        propertiesContract.changeStateBackToVerificed(sale.propertyId, msg.sender);
+        propertiesContract.changeStateBackToVerified(sale.propertyId, msg.sender);
 
         return true;
     }
@@ -597,7 +597,6 @@ contract TransferOwnerShip{
 
 
     }
-
 
 
     // function to re-request purchase request

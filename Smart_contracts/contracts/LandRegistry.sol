@@ -122,7 +122,6 @@ contract LandRegistry{
             Property.Land[] memory properties = new Property.Land[](propertyIds.length);
             
             for (uint256 i = 0; i < propertyIds.length; i++) {
-            //   properties[i] = propertiesContract.lands(propertyIds[i]);
                 properties[i] = propertiesContract.getLandDetailsAsStruct(propertyIds[i]);
             }
                
@@ -170,8 +169,7 @@ contract LandRegistry{
         uint256 _propertyId
         ) public onlyRevenueDeptEmployee(getRevenueDeptId(_propertyId)) {
         
-        propertiesContract.changeStateToVerifed(_propertyId, msg.sender);
-
+        propertiesContract.changeStateToVerified(_propertyId, msg.sender);
     }
 
     function rejectProperty(
@@ -206,9 +204,6 @@ contract LandRegistry{
         propertiesOfOwner[newOwner].push(_propertyId);
 
         propertiesContract.updateOwner(_propertyId, newOwner);
-
-        
-
     }
 
     function getPropertiesContract() public view returns (address){

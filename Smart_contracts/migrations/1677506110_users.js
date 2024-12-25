@@ -3,14 +3,12 @@
 var Users = artifacts.require("Users");  // contract Name
 
 
-// // Property contract : for holding property and methods
-// var Properties = artifacts.require("Property");  
+// Property contract : for holding property and methods
+var Properties = artifacts.require("Property");  
 
 
 // LandRegistry : holds owner-land mapping and ownership transfer
 var LandRegistry = artifacts.require("LandRegistry");
-
-
 
 
 // TransferOwnerShip : holds  ownership transfer and sales
@@ -23,7 +21,7 @@ module.exports = async function(deployer) {
 
   await deployer.deploy(Users);
 
-  // deployer.deploy(Properties);
+  await deployer.deploy(Properties);
 
   await deployer.deploy(LandRegistry);
 
