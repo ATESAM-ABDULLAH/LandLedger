@@ -1,10 +1,5 @@
-
-
-
-
 async function connectToBlockchain()
 {
-
   // checking Meta-Mask extension is added or not
   if (window.ethereum){
 

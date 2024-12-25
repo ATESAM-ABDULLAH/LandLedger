@@ -20,9 +20,9 @@ xhr.onload = function() {
     window.localStorage.LandRegistry_ContractAddress = response["LandRegistry"]["address"];
     window.localStorage.LandRegistry_ContractABI = JSON.stringify(response["LandRegistry"]["abi"]);
 
-     // TransferOwnership
-     window.localStorage.TransferOwnership_ContractAddress = response["TransferOwnership"]["address"];
-     window.localStorage.TransferOwnership_ContractABI = JSON.stringify(response["TransferOwnership"]["abi"]);
+    // TransferOwnership
+    window.localStorage.TransferOwnership_ContractAddress = response["TransferOwnership"]["address"];
+    window.localStorage.TransferOwnership_ContractABI = JSON.stringify(response["TransferOwnership"]["abi"]);
  
 
   } else {

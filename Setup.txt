@@ -1,16 +1,15 @@
 --------------------------SETUP-------------------------------------
 1. Clone repo
-    git clone https://github.com/bhanuprasadChesetti/Land-Registration-System-with-Blockchain.git
-    cd Land-Registration-System-with-Blockchain
+    git clone https://github.com/ATESAM-ABDULLAH/LandLedger.git/
+    cd LandLedger
 
 2. Python Dependencies: create a virtual environment and install the required packages:
     sudo apt install python3-venv
     python3 -m venv env
     source env/bin/activate
-    pip install -r requirements.txt
 
-3. libfuse not found
-    sudo apt install libfuse-dev
+3. Extra base modules needed
+    sudo apt install pkg-config libfuse-dev curl 
 
 4. Redo install
     pip install -r requirements.txt
@@ -18,50 +17,31 @@
 5. Node.js and npm: Install Node.js and npm if not already installed:
     sudo apt install nodejs npm
 
-6. Err: Update Nodejs to 14
+6. Update Nodejs to stable version
     npm install n -g
     n stable
     # Restart Terminal to see updated Node version (node -v)
 
-7.Truffle and Ganache: Install Truffle and Ganache CLI globally:
+7.Truffle and Ganache: Install Truffle and Ganache CLI globally
     sudo npm install -g truffle ganache-cli
 
-8. MongoDB 
+8. MongoDB <change "jammy" to name of ubuntu version>
     curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc |sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
     echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
     sudo apt update
     sudo apt-get install -y mongodb-org
 
-9. Python Depedency Error:
-    add "Werkzeug==2.3.7" to requirements.txt
-    pip install -r requirements.txt
-
-10. Configure Server_For_Revenue_Dept/config.json
-    "Ganache_Url" : "http://127.0.0.1:8545",  // Find from terminal running ganache
-    "NETWORK_CHAIN_ID": 5777, // Fixed -> do not change
-    "Mongo_Db_Url": "mongodb://localhost:27017", // Find from terminal running mongosh
-    "Secret_Key": "RevenueDept$123", // Do not change
-    "Address_Used_To_Deploy_Contract": "<Changes each time ganache-cli is run>",
-    "Admin_Password": "12345678" // Pass word for Admin user
-
-
-11. Install and Setup MetaMask extension in browser
+9. Install and Setup MetaMask extension in browser
 
 
 -------------------------RUN CODE----------------------------------------
-// if running the first time
-    cd Smart_contracts
-    rm -rf build        #this compiles contracts for you system
-    truffle compile     #check truffle-config.js has correct networkId (5777)
-    truffle migrate     #this publishes the contracts on the chain
-//
-
 1. Run Ganache 
-ganache-cli --networkId 5777 # keep runnning in seperate terminal
+ganache-cli --networkId 5777 
+# keep runnning in seperate terminal
 
 2. Setup Accounts
     Ganache acc {0} -> Contract/Admin
-        1. Put acc num of {0} in config.json
+        1. Update "Address_Used_To_Deploy_Contract" in Server_For_Revenue_Dept/config.json with acc{0}
         2. Import as new acc into Metamask using pvt key
 
     Ganache {1}, {2} , {3} -> Seller, Buyer, Employee_1
