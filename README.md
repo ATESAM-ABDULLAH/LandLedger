@@ -78,9 +78,119 @@ This project contains mainly two steps:
 - **Seller Decision-Making**: Landowners have the flexibility to review buy requests and select preferred buyers and offered prices.
 - **Secure Transaction**: Upon acceptance of the transfer/buying proposal, buyers send Ether coins as payment, and ownership is seamlessly transferred.
 
+## Setup
+
+Follow these steps to set up the LandLedger project on your system:
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/ATESAM-ABDULLAH/LandLedger.git/
+cd LandLedger
+```
+
+### 2. Python Dependencies
+Create a virtual environment and install the required Python packages:
+```bash
+sudo apt install python3-venv
+python3 -m venv env
+source env/bin/activate
+```
+
+### 3. Install Extra Base Modules
+Install additional system dependencies:
+```bash
+sudo apt install pkg-config libfuse-dev curl
+```
+
+### 4. Install Required Python Packages
+Redo the package installation:
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Install Node.js and npm
+Ensure Node.js and npm are installed:
+```bash
+sudo apt install nodejs npm
+```
+
+### 6. Update Node.js to Stable Version
+```bash
+npm install n -g
+n stable
+# Restart the terminal to verify the updated Node.js version
+node -v
+```
+
+### 7. Install Truffle and Ganache
+Install Truffle and Ganache CLI globally:
+```bash
+sudo npm install -g truffle ganache-cli
+```
+
+### 8. Install MongoDB
+Replace `jammy` with your Ubuntu version in the following commands:
+```bash
+curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+sudo apt update
+sudo apt-get install -y mongodb-org
+```
+
+### 9. Install and Setup MetaMask Browser Extension
 
 
-**Screen shorts:** <br>
+## Running the Code
+
+Follow these steps to run the LandLedger application:
+
+### 1. Start Ganache
+Run Ganache in a separate terminal:
+```bash
+ganache-cli --networkId 5777
+```
+
+### 2. Setup Accounts
+#### Admin Account
+1. Assign Ganache account `{0}` as the contract admin.
+2. Update the `"Address_Used_To_Deploy_Contract"` field in `Server_For_Revenue_Dept/config.json` with the private key of Ganache account `{0}`.
+3. Import this account as a new account in MetaMask.
+
+#### Other Accounts
+1. Assign Ganache accounts `{1}`, `{2}`, and `{3}` to roles: Seller, Buyer, and Employee_1.
+2. Import these accounts as new accounts in MetaMask using their respective private keys.
+
+### 3. Migrate Smart Contracts
+Navigate to the `Smart_contracts` directory and migrate contracts:
+```bash
+cd Smart_contracts
+truffle migrate
+```
+
+### 4. Start MongoDB
+Run MongoDB in a separate terminal:
+```bash
+sudo systemctl start mongod
+mongosh
+```
+
+### 5. Run the Application
+#### Server for Users
+```bash
+cd Server_For_Users
+python3 app.py
+```
+
+#### Server for Revenue Department
+```bash
+cd Server_For_Revenue_Dept
+python3 app.py
+```
+
+
+
+## Screen shorts:
+<br>
  <img src="readme_assests/1.User connecting their wallet.png" width="600" height="300"> 
  <img src="readme_assests/2.User Registration.png" width="600" height="300"> 
  <img src="readme_assests/3.Adding their land.png" width="600" height="300"> 
