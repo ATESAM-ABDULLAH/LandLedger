@@ -61,3 +61,4 @@ ganache-cli --networkId 5777
 
     cd Server_For_Revenue_Dept
     python3 app.py
+
