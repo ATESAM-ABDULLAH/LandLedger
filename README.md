@@ -3,12 +3,12 @@
 
 ## Table of Contents
 
-- [About](##About)
-   - [How it works](###how-it-works)
-- [Tech Stack & Tools](##tech-stack--tools)
-- [Key Features](##key-features)
-- [Setup](##Setup)
-- [Running the Code](#usage)
+- [About](#About)
+   - [How it works](#how-it-works)
+- [Tech Stack & Tools](#tech-stack--tools)
+- [Key Features](#key-features)
+- [Setup](#Setup)
+- [Running the Code](#Running-the-Code)
 
 
 ## About
