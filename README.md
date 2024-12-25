@@ -202,7 +202,7 @@ python3 app.py
  <img src="readme_assests/9.Seller accepting buyer request.png" width="600" height="300"> 
  <img src="readme_assests/10.Buyer making paymet.png" width="600" height="300"> 
  <img src="readme_assests/11.Ownership transferred to buyer.png" width="600" height="300"> 
-<img src="readme_assests/User_contract.png" width = "200" height = "150">
-<img src="readme_assests/Land_contract.png" width = "200" height = "150">
-<img src="readme_assests/Property_contract.png" width = "200" height = "150">
-<img src="readme_assests/Transfer_contract.png" width = "200" height = "150">
+<img src="readme_assests/User_contract.png" width = "300" height = "200">
+<img src="readme_assests/Land_contract.png" width = "300" height = "200">
+<img src="readme_assests/Property_contract.png" width = "300" height = "200">
+<img src="readme_assests/Transfer_contract.png" width = "300" height = "200">
